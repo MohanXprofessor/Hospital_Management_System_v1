@@ -1,0 +1,120 @@
+package com.HMSApp.Hospital.Management.System.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Table (name="Patients_record")
+public class Patients {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private long id;
+	@Column(name="P_Name")
+	private String name;
+	
+	@Column(name="P_age")
+	private int age;
+	
+	@Column(name="P_BloodGroup")
+	private String BloodGroup;
+	
+	@Column(name="P_prescription")
+	private String prescription;
+	
+	@Column(name="P_does")
+	private String does;
+	
+	@Column(name="P_fees")
+	private long fees;
+	
+	@Column(name="P_urgency")
+	private String urgency;
+
+	public Patients() {
+		super();
+	}
+	public Patients(String name, int age, String bloodGroup, String prescription, String does, long fees,
+			String urgency) {
+		super();
+		this.name = name;
+		this.age = age;
+		BloodGroup = bloodGroup;
+		this.prescription = prescription;
+		this.does = does;
+		this.fees = fees;
+		this.urgency = urgency;
+	}
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public String getBloodGroup() {
+		return BloodGroup;
+	}
+
+	public void setBloodGroup(String bloodGroup) {
+		BloodGroup = bloodGroup;
+	}
+
+	public String getPrescription() {
+		return prescription;
+	}
+
+	public void setPrescription(String prescription) {
+		this.prescription = prescription;
+	}
+
+	public String getDoes() {
+		return does;
+	}
+
+	public void setDoes(String does) {
+		this.does = does;
+	}
+
+	public long getFees() {
+		return fees;
+	}
+
+	public void setFees(long fees) {
+		this.fees = fees;
+	}
+
+	public String getUrgency() {
+		return urgency;
+	}
+
+	public void setUrgency(String urgency) {
+		this.urgency = urgency;
+	}
+
+	
+	
+	
+	
+	
+	
+}

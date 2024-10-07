@@ -1,0 +1,11 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import java.util.List;
+
+import com.HMSApp.Hospital.Management.System.entity.Patients;
+
+public class DocAppointmentSerImp implements  {
+
+	
+
+}

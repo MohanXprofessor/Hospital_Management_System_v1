@@ -1,2 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy/>
+<typeInfoHistroy>
+    <typeInfo handle="=Hospital-Management-System/C:\/Users\/Mr.Professor\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/3.3.4\/spring-data-jpa-3.3.4.jar=/maven.pomderived=/true=/=/maven.groupId=/org.springframework.data=/=/maven.artifactId=/spring-data-jpa=/=/maven.version=/3.3.4=/=/maven.scope=/compile=/=/maven.pomderived=/true=/&lt;org.springframework.data.jpa.repository(JpaRepository.class[JpaRepository" modifiers="1537" timestamp="1727185139872"/>
+    <typeInfo handle="=Hospital-Management-System/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.HMSApp.Hospital.Management.System.Services{PatientsService.java[PatientsService" modifiers="513" timestamp="1728288024737"/>
+    <typeInfo handle="=Hospital-Management-System/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.HMSApp.Hospital.Management.System.Services{DocAppointmentService.java[DocAppointmentService" modifiers="513" timestamp="1728296948407"/>
+    <typeInfo handle="=Hospital-Management-System/src\/main\/java=/optional=/true=/=/maven.pomderived=/true=/&lt;com.HMSApp.Hospital.Management.System.Services{DocMedicineService.java[DocMedicineService" modifiers="513" timestamp="1728297105856"/>
+</typeInfoHistroy>

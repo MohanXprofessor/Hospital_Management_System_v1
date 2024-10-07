@@ -1,0 +1,35 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.HMSApp.Hospital.Management.System.Repository.PatientsRepository;
+import com.HMSApp.Hospital.Management.System.entity.Patients;
+
+@Service
+public class PatientsServiceImp implements PatientsService {
+
+	
+	@Autowired
+	private PatientsRepository pRepo;
+	
+	
+	@Override
+	public Patients createPatients(Patients patients) {
+		
+		return pRepo.save(patients);
+	}
+
+	
+	
+	@Override
+	public Patients getPaitentsById(Long id) {
+		
+		
+		
+		return null;
+	}
+	
+	
+
+}

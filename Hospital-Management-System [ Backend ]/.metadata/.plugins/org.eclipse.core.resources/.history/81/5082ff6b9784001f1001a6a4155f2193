@@ -1,0 +1,14 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import java.util.List;
+
+import com.HMSApp.Hospital.Management.System.doctloginEntity.Medicine;
+
+
+
+
+public class DocMedicineSerImp implements DocMedicineService {
+
+	
+
+}

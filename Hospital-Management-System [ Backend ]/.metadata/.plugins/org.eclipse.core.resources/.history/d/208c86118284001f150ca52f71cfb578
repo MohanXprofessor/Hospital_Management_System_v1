@@ -1,0 +1,16 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import com.HMSApp.Hospital.Management.System.entity.Patients;
+
+public interface PatientsService {
+	
+	// All Method Come under Interface Service Layer
+	
+	//To Save Patients
+	public Patients createPatients(Patients patients);
+	
+	//To Search by Id 
+	public Patients getPaitentsById(Long id);
+	
+
+}

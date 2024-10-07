@@ -1,0 +1,5 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+public class DocAppointmentSerImp implements DocAppointmentService {
+
+}

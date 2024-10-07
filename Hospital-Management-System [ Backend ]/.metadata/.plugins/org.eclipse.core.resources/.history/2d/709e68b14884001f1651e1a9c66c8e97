@@ -1,0 +1,7 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+public class PatientsServiceImp implements PatientsService {
+	
+	
+
+}

@@ -1,0 +1,39 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import java.util.List;
+
+import com.HMSApp.Hospital.Management.System.entity.Patients;
+
+public class DocMedicineSerImp implements DocMedicineService {
+
+	@Override
+	public Patients createPatients(Patients patients) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Patients getPatientsById(Long id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Patients updatePatients(Patients patients) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void deletePatients(Long id) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Patients> getAllPatients() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}
