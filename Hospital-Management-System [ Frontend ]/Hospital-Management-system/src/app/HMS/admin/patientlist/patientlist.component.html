@@ -1,0 +1,35 @@
+<app-admindashboard></app-admindashboard>
+
+<h3 class="text-center text-primary">Patients List</h3>
+<table class="table table-hover container">
+  <thead class="table table-dark">
+    <tr>
+      <th scope="col">Sr.No</th>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Blood Group</th>
+      <th scope="col">Prescription</th>
+      <th scope="col">does</th>
+      <th scope="col">Fees</th>
+      <th scope="col">Urgency</th>
+      <th colspan="3" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let patient of patients; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ patient.p_id }}</td>
+      <td>{{ patient.name }}</td>
+      <td>{{ patient.age }}</td>
+      <td>{{ patient.bloodGroup }}</td>
+      <td>{{ patient.prescription }}</td>
+      <td>{{ patient.does }}</td>
+      <td>{{ patient.does }}</td>
+      <td>{{ patient.urgency }}</td>
+      <td><button class="btn btn-sm btn-success">View</button></td>
+      <td><button class="btn btn-sm btn-info">Edit</button></td>
+      <td><button class="btn btn-sm btn-danger">Delete</button></td>
+    </tr>
+  </tbody>
+</table>

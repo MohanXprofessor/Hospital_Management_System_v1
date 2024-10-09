@@ -1,0 +1,31 @@
+<app-admindashboard></app-admindashboard>
+
+<h3 class="text-center text-primary">Appointment List</h3>
+<table class="table table-hover container">
+  <thead class="table table-dark">
+    <tr>
+      <th scope="col">Sr.No</th>
+      <th scope="col">ID</th>
+      <th scope="col">Age</th>
+      <th scope="col">Name</th>
+      <th scope="col">Number</th>
+      <th scope="col">Symptoms</th>
+
+      <th colspan="3" class="text-center">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let appointment of appointments; let i = index">
+      <th scope="row">{{ i + 1 }}</th>
+      <td>{{ appointment.a_id }}</td>
+      <td>{{ appointment.age }}</td>
+      <td>{{ appointment.name }}</td>
+      <td>{{ appointment.number }}</td>
+      <td>{{ appointment.symptoms }}</td>
+
+      <td><button class="btn btn-sm btn-success">View</button></td>
+      <td><button class="btn btn-sm btn-info">Edit</button></td>
+      <td><button class="btn btn-sm btn-danger">Delete</button></td>
+    </tr>
+  </tbody>
+</table>
