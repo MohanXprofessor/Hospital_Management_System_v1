@@ -1,0 +1,70 @@
+<app-admindashboard></app-admindashboard>
+<div class="container mt-5">
+  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="row justify-content-center">
+      <div class="">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            [(ngModel)]="appointments.name"
+            placeholder="Enter Name"
+            required
+          />
+        </div>
+
+        <!-- AGE Field -->
+        <div class="form-group">
+          <label for="age">AGE</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            class="form-control"
+            [(ngModel)]="appointments.age"
+            placeholder="Enter Age"
+            required
+          />
+        </div>
+
+        <!-- Symptoms Field -->
+        <div class="form-group">
+          <label for="Symptoms">Symptoms</label>
+          <input
+            type="text"
+            id="Symptoms"
+            name="Symptoms"
+            class="form-control"
+            [(ngModel)]="appointments.symptoms"
+            placeholder="Enter Symptoms"
+            required
+          />
+        </div>
+        <!-- Mobile Field -->
+        <div class="form-group">
+          <label for="mobile">Mobile</label>
+          <input
+            type="number"
+            id="mobile"
+            name="mobile"
+            class="form-control"
+            [(ngModel)]="appointments.number"
+            placeholder="Enter mobile"
+            required
+          />
+        </div>
+        <br /><br />
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

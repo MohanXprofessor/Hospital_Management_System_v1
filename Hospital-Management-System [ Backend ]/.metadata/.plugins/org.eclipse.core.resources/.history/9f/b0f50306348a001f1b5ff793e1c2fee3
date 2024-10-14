@@ -1,0 +1,65 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.HMSApp.Hospital.Management.System.Repository.PatientsRepository;
+import com.HMSApp.Hospital.Management.System.entity.Patients;
+
+@Service
+public class PatientsServiceImp implements PatientsService {
+
+	
+	@Autowired
+	private PatientsRepository pRepo;
+	
+	
+	@Override
+	public Patients createPatients(Patients patients) {
+		
+		return pRepo.save(patients);
+	}
+
+
+	@Override
+	public Patients getPatientsById(Long id) {
+
+		Optional<Patients> patients=pRepo.findById(id);
+		if(patients.isEmpty())
+		{
+			throw new RuntimeException("Patients Not Found...");
+		}
+		Patients patientsfound=patients.get();
+		return patientsfound;
+	}
+
+
+	@Override
+	public Patients updatePatients(Patients patients) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public void deletePatients(Long id) {
+		
+		getPatientsById(id);
+		pRepo.deleteById(id);
+	}
+
+
+	@Override
+	public List<Patients> getAllPatients() {
+		List<Patients> getallpatients=pRepo.findAll();
+		return getallpatients;
+	}
+
+	
+	
+
+}

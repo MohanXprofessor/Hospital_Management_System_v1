@@ -1,0 +1,113 @@
+<app-admindashboard></app-admindashboard>
+<div class="container mt-5">
+  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="row justify-content-center">
+      <div class="">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            [(ngModel)]="patients.name"
+            placeholder="Enter Name"
+            required
+          />
+        </div>
+
+        <!-- Age Field -->
+        <div class="form-group">
+          <label for="age">Age</label>
+          <input
+            type="number"
+            id="age"
+            name="age"
+            class="form-control"
+            [(ngModel)]="patients.age"
+            placeholder="Enter Age"
+            required
+          />
+        </div>
+
+        <!-- Blood Group Field -->
+        <div class="form-group">
+          <label for="blood">Blood Group</label>
+          <input
+            type="text"
+            id="blood"
+            name="blood"
+            class="form-control"
+            [(ngModel)]="patients.bloodGroup"
+            placeholder="Enter Blood Group"
+            required
+          />
+        </div>
+
+        <!-- Prescription Field -->
+        <div class="form-group">
+          <label for="Prescription">Prescription</label>
+          <input
+            type="text"
+            id="Prescription"
+            name="Prescription"
+            class="form-control"
+            [(ngModel)]="patients.prescription"
+            placeholder="Enter Prescription"
+            required
+          />
+        </div>
+
+        <!-- Does Field -->
+        <div class="form-group">
+          <label for="does">Does</label>
+          <input
+            type="text"
+            id="does"
+            name="does"
+            class="form-control"
+            [(ngModel)]="patients.does"
+            placeholder="Enter does"
+            required
+          />
+        </div>
+
+        <!-- fees Field -->
+        <div class="form-group">
+          <label for="fees">Fees</label>
+          <input
+            type="number"
+            id="fees"
+            name="fees"
+            class="form-control"
+            [(ngModel)]="patients.fees"
+            placeholder="Enter fees"
+            required
+          />
+        </div>
+
+        <!-- Urgency Field -->
+        <div class="form-group">
+          <label for="does">Urgency</label>
+          <input
+            type="text"
+            id="urgency"
+            name="urgency"
+            class="form-control"
+            [(ngModel)]="patients.urgency"
+            placeholder="Enter urgency"
+            required
+          />
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

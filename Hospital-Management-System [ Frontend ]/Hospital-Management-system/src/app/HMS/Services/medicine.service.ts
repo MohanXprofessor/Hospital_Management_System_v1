@@ -19,5 +19,9 @@ getmedicinelist():Observable<Medicine[]>{
 
 }
 
+createmedicine(medicine:Medicine):Observable<Medicine>{
+  return this.http.post<Medicine>(`${this.baseUrl}/createmedicine`,medicine)
+}
+
 
 }

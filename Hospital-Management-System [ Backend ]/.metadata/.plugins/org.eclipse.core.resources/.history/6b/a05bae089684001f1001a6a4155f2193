@@ -1,7 +1,0 @@
-package com.HMSApp.Hospital.Management.System.Repository;
-
-import org.springframework.data.jpa.repository.JpaRepository;
-
-public interface DocMedicineRepo extends JpaRepository<T, ID> {
-
-}

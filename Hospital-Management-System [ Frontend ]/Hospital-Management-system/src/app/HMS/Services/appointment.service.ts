@@ -16,4 +16,13 @@ export class AppointmentService {
   getappointmentlist():Observable<Appointment[]>{
     return this.http.get<Appointment[]>(`${this.baseUrl}/getallappointment`)
   }
+
+  createappointment(appointment:Appointment):Observable<Appointment>{
+    return this.http.post<Appointment>(`${this.baseUrl}/createappointment`,appointment)
+  }
+
+   // Method to delete a patient by ID
+   deleteAppointment(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+  }
 }

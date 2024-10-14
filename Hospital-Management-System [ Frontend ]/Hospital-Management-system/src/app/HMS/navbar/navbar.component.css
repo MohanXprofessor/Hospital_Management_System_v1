@@ -1,0 +1,8 @@
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+.droparea{
+    padding: 10px;
+    background-color: #F8F9FA;
+}

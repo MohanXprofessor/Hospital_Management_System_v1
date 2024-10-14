@@ -10,6 +10,7 @@ import { Medicine } from '../../Models/medicine';
 export class MedicinelistComponent {
 
   medicines:Medicine[]=[];
+  
   constructor(private medicineservice:MedicineService){}
 
  ngOnInit():void

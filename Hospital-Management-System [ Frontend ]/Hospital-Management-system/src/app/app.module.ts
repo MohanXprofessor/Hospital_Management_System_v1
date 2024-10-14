@@ -8,6 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { PatientlistComponent } from './HMS/admin/patientlist/patientlist.component';
 import { MedicinelistComponent } from './HMS/admin/medicinelist/medicinelist.component';
 import { AppointmentlistComponent } from './HMS/admin/appointmentlist/appointmentlist.component';
+import { NgbModal, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CreatepatientComponent } from './HMS/admin/createpatient/createpatient.component';
+import { CreatemedicineComponent } from './HMS/admin/createmedicine/createmedicine.component';
+import { CreateappointmentComponent } from './HMS/admin/createappointment/createappointment.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -17,12 +23,18 @@ import { AppointmentlistComponent } from './HMS/admin/appointmentlist/appointmen
     AdmindashboardComponent,
     PatientlistComponent,
     MedicinelistComponent,
-    AppointmentlistComponent
+    AppointmentlistComponent,
+    CreatepatientComponent,
+    CreatemedicineComponent,
+    CreateappointmentComponent
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+    
     
   ],
   providers: [],

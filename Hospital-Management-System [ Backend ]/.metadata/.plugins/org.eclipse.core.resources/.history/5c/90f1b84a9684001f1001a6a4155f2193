@@ -1,5 +1,0 @@
-package com.HMSApp.Hospital.Management.System.Services;
-
-public interface DocMedicineService {
-
-}

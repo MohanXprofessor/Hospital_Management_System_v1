@@ -1,9 +1,0 @@
-package com.HMSApp.Hospital.Management.System.Services;
-
-public interface PatientsService {
-	
-	// All Method Come under Interface Service Layer
-	
-	
-
-}

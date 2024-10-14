@@ -1,0 +1,43 @@
+<app-admindashboard></app-admindashboard>
+<div class="container mt-5">
+  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            [(ngModel)]="medicines.drug_name"
+            placeholder="Enter Name"
+            required
+          />
+        </div>
+
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="stock">Stock</label>
+          <input
+            type="number"
+            id="stock"
+            name="stock"
+            class="form-control"
+            [(ngModel)]="medicines.stock"
+            placeholder="Enter Stock"
+            required
+          />
+        </div>
+        <br /><br />
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+          <button type="submit" class="btn btn-primary btn-block">
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
