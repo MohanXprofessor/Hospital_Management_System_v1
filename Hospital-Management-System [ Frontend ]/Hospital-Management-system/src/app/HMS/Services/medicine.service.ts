@@ -23,5 +23,8 @@ createmedicine(medicine:Medicine):Observable<Medicine>{
   return this.http.post<Medicine>(`${this.baseUrl}/createmedicine`,medicine)
 }
 
-
+ // Method to delete a patient by ID
+ deleteMedicine(id: number): Observable<void> {
+  return this.http.delete<void>(`${this.baseUrl}/medicine/${id}`);
+}
 }

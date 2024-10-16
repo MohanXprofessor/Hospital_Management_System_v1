@@ -25,7 +25,14 @@
 
       <td><button class="btn btn-sm btn-success">View</button></td>
       <td><button class="btn btn-sm btn-info">Edit</button></td>
-      <td><button class="btn btn-sm btn-danger">Delete</button></td>
+      <td>
+        <button
+          class="btn btn-sm btn-danger"
+          (click)="medicinedelete(medicine.m_id)"
+        >
+          Delete
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

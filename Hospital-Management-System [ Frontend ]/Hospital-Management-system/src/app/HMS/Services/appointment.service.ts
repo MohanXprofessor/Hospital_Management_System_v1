@@ -23,6 +23,6 @@ export class AppointmentService {
 
    // Method to delete a patient by ID
    deleteAppointment(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.baseUrl}/${id}`);
+    return this.http.delete<void>(`${this.baseUrl}/appointment/${id}`);
   }
 }

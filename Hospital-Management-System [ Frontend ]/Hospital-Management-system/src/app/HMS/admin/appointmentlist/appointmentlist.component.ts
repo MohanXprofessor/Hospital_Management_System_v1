@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from '../../Services/appointment.service';
 import { Appointment } from '../../Models/appointment';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-appointmentlist',
@@ -10,7 +11,7 @@ import { Appointment } from '../../Models/appointment';
 export class AppointmentlistComponent  implements OnInit{
 
   appointments:Appointment[]=[];
-  constructor(private appointmentservice:AppointmentService){}
+  constructor(private appointmentservice:AppointmentService,private router:Router){}
 
 
 ngOnInit():void
@@ -23,6 +24,15 @@ ngOnInit():void
       this.appointments=data;
       
     } )
+  }
+
+  appointmentdelete(id:number)
+  {
+    this.appointmentservice.deleteAppointment(id).subscribe(data=>{
+      this.getappointmentlist();
+      alert("Are You Sure You want to Delete this Record...");
+      this.router.navigate(["/appointmentpage"])
+    })
   }
 
 }
