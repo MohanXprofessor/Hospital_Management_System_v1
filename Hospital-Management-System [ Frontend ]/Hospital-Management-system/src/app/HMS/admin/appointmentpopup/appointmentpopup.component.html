@@ -1,0 +1,28 @@
+<h1 mat-dialog-title class="atitle text-center">Appointment Details</h1>
+<hr />
+
+<!-- appointment Details Section -->
+<div class="abody" mat-dialog-content *ngIf="appointment">
+  <p><strong>Id:</strong> {{ appointment.a_id }}</p>
+  <p><strong>Name:</strong>{{ appointment.name }}</p>
+  <p><strong>Age:</strong>{{ appointment.age }}</p>
+  <p><strong>Mobile No:</strong> {{ appointment.number }}</p>
+  <p><strong>Symptoms:</strong>{{ appointment.symptoms }}</p>
+</div>
+
+<!-- Loading Indicator -->
+<div mat-dialog-content *ngIf="!appointment">
+  <p>Loading Appointment details...</p>
+</div>
+
+<!-- Dialog Actions -->
+<div mat-dialog-actions>
+  <button
+    mat-raised-button
+    color="warn"
+    mat-dialog-close
+    class="abutton mx-auto"
+  >
+    Close
+  </button>
+</div>

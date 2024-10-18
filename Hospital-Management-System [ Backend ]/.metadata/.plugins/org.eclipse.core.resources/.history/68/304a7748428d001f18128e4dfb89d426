@@ -1,12 +1,15 @@
 package com.HMSApp.Hospital.Management.System.Controller;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -43,9 +46,22 @@ public class PatientsController {
 		return allPatients;
 	}
 	
+	@DeleteMapping("/patients/{id}")
+    public ResponseEntity<Map<String,Boolean>> deletePatient(@PathVariable Long id) {
+        // Call the service layer to delete the patient by ID
+        pservice.deletePatients(id);
+        
+        
+        // Return a 204 No Content status, meaning the operation was successful but there's no response body
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 	
 	
-	
+	@GetMapping("/{id}")
+    public ResponseEntity<Patients> getPatientsById(@PathVariable Long id) {
+        Patients patient =pservice.getPatientsById(id);
+        return ResponseEntity.ok(patient);
+    }
 	
 	
 	

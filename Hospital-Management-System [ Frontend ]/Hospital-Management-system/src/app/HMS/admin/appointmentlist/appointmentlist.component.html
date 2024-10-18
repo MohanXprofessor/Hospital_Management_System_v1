@@ -3,7 +3,7 @@
 <h3 class="text-center text-primary">Appointment List</h3>
 <div class="d-flex justify-content-end px-5">
   <a routerLink="/createappointment"
-    ><button class="btn btn-primary">Add +</button></a
+    ><button mat-stroked-button color="primary">Add +</button></a
   >
 </div>
 <table class="table table-hover container">
@@ -28,11 +28,23 @@
       <td>{{ appointment.symptoms }}</td>
       <td>{{ appointment.number }}</td>
 
-      <td><button class="btn btn-sm btn-success">View</button></td>
-      <td><button class="btn btn-sm btn-info">Edit</button></td>
       <td>
         <button
-          class="btn btn-sm btn-danger"
+          class="btn btn-sm btn-success"
+          mat-raised-button
+          color="primary"
+          (click)="ShowappointmentPopup(appointment.a_id)"
+        >
+          View
+        </button>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-info" mat-raised-button>Edit</button>
+      </td>
+      <td>
+        <button
+          mat-raised-button
+          color="warn"
           (click)="appointmentdelete(appointment.a_id)"
         >
           Delete

@@ -1,0 +1,26 @@
+<h1 mat-dialog-title class="ptitle text-center">Patient Details</h1>
+<hr />
+
+<!-- patient Details Section -->
+<div class="pbody" mat-dialog-content *ngIf="patient">
+  <p><strong>Id:</strong> {{ patient.p_id }}</p>
+  <p><strong>Name:</strong>{{ patient.name }}</p>
+  <p><strong>Age:</strong>{{ patient.age }}</p>
+  <p><strong>Blood Group:</strong> {{ patient.bloodGroup }}</p>
+  <p><strong>Prescription:</strong>{{ patient.prescription }}</p>
+  <p><strong>Does:</strong>{{ patient.does }}</p>
+  <p><strong>Fees:</strong> {{ patient.fees }}</p>
+  <p><strong>Urgency:</strong>{{ patient.urgency }}</p>
+</div>
+
+<!-- Loading Indicator -->
+<div mat-dialog-content *ngIf="!patient">
+  <p>Loading patient details...</p>
+</div>
+
+<!-- Dialog Actions -->
+<div mat-dialog-actions>
+  <button mat-flat-button mat-dialog-close class="pbutton mx-auto" color="warn">
+    Close
+  </button>
+</div>

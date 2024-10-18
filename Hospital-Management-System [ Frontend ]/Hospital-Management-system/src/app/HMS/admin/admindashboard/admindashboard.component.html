@@ -2,7 +2,7 @@
   class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded"
 >
   <div class="container">
-    <a class="navbar-brand hred" routerLink="/">
+    <a class="navbar-brand hred" routerLink="/admindash">
       <span>H+</span>&nbsp;<span class="ad">Admin</span></a
     >
     <button
@@ -23,16 +23,16 @@
           <a
             class="nav-link active"
             aria-current="page"
-            routerLink="/appointmentpage"
+            routerLink="/appointmentlist"
             >Appointment</a
           >
         </li>
 
-        <li class="nav-item">
+        <!-- <li class="nav-item">
           <a
             class="nav-link active"
             aria-current="page"
-            routerLink="/medicinepage"
+            routerLink="/medicinelist"
             >Medicine</a
           >
         </li>
@@ -41,11 +41,12 @@
           <a
             class="nav-link active"
             aria-current="page"
-            routerLink="/patientlist"
+            routerLink="/patientslist"
             >Patients</a
           >
-        </li>
+        </li> -->
       </ul>
     </div>
   </div>
+  <button mat-flat-button color="warn">LogOut</button>
 </nav>

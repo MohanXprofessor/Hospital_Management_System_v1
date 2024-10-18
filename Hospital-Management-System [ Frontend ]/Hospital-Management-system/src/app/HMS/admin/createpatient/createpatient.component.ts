@@ -19,7 +19,7 @@ export class CreatepatientComponent {
   savepatients(){
     this.patientservice.createpatient(this.patients).subscribe(data=>{
       console.log(data)
-      confirm("Save Patient..");
+      // confirm("Save Patient..");
     this.gotopatients();
     })
   }
@@ -30,6 +30,6 @@ export class CreatepatientComponent {
   
   gotopatients()
   {
-    this.router.navigate(["/patientlist"]);
+    this.router.navigate(["/patientslist"]);
   }
 }

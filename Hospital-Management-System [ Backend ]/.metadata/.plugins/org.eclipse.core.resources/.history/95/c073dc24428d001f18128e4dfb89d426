@@ -1,6 +1,7 @@
 package com.HMSApp.Hospital.Management.System.Services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,8 +27,14 @@ public class PatientsServiceImp implements PatientsService {
 
 	@Override
 	public Patients getPatientsById(Long id) {
-		// TODO Auto-generated method stub
-		return null;
+
+		Optional<Patients> patients=pRepo.findById(id);
+		if(patients.isEmpty())
+		{
+			throw new RuntimeException("Patients "+id+" Not Found...");
+		}
+		Patients patientsfound=patients.get();
+		return patientsfound;
 	}
 
 
@@ -40,8 +47,9 @@ public class PatientsServiceImp implements PatientsService {
 
 	@Override
 	public void deletePatients(Long id) {
-		// TODO Auto-generated method stub
 		
+		getPatientsById(id);
+		pRepo.deleteById(id);
 	}
 
 

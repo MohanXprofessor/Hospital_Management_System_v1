@@ -41,12 +41,15 @@
             aria-expanded="false"
             >Login</a
           >
-          <ul class="dropdown-menu droparea" aria-labelledby="adminDropdown">
+          <ul
+            class="dropdown-menu droparea navlist"
+            aria-labelledby="adminDropdown"
+          >
             <li>
-              <a class="dropdown-item" routerLink="">Doctor</a>
+              <a class="dropdown-item" routerLink="/logindoc">Doctor</a>
             </li>
             <li>
-              <a class="dropdown-item" routerLink="/adminpage">Admin</a>
+              <a class="dropdown-item" routerLink="/loginadmin">Admin</a>
             </li>
           </ul>
         </li>
@@ -54,3 +57,4 @@
     </div>
   </div>
 </nav>
+<app-carousel />

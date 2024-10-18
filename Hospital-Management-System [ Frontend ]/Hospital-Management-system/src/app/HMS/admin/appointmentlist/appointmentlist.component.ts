@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AppointmentService } from '../../Services/appointment.service';
 import { Appointment } from '../../Models/appointment';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { AppointmentpopupComponent } from '../appointmentpopup/appointmentpopup.component';
 
 @Component({
   selector: 'app-appointmentlist',
@@ -11,7 +13,7 @@ import { Router } from '@angular/router';
 export class AppointmentlistComponent  implements OnInit{
 
   appointments:Appointment[]=[];
-  constructor(private appointmentservice:AppointmentService,private router:Router){}
+  constructor(private dialog:MatDialog,private appointmentservice:AppointmentService,private router:Router){}
 
 
 ngOnInit():void
@@ -31,8 +33,17 @@ ngOnInit():void
     this.appointmentservice.deleteAppointment(id).subscribe(data=>{
       this.getappointmentlist();
       alert("Are You Sure You want to Delete this Record...");
-      this.router.navigate(["/appointmentpage"])
+      this.router.navigate(["/appointmentlist"])
     })
   }
+
+  ShowappointmentPopup(appointmentId:any): void {
+    this.dialog.open(AppointmentpopupComponent, {
+     width: '30%',
+     data: { id: appointmentId 
+     }
+   });
+ 
+ }
 
 }

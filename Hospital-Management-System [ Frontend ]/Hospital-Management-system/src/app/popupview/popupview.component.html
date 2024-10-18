@@ -1,0 +1,21 @@
+<h2 mat-dialog-title class="mtitle">Medicine Details</h2>
+<hr />
+
+<!-- Medicine Details Section -->
+<div mat-dialog-content class="mbody" *ngIf="medicine">
+  <p><strong>Medicine Id:</strong> {{ medicine.m_id }}</p>
+  <p><strong>Medicine Name:</strong>{{ medicine.drug_name }}</p>
+  <p><strong>Medicine Stock:</strong>{{ medicine.stock }}</p>
+</div>
+
+<!-- Loading Indicator -->
+<div mat-dialog-content *ngIf="!medicine">
+  <p>Loading medicine details...</p>
+</div>
+
+<!-- Dialog Actions -->
+<div mat-dialog-actions>
+  <button class="mbutton mx-auto" mat-flat-button mat-dialog-close color="warn">
+    Close
+  </button>
+</div>

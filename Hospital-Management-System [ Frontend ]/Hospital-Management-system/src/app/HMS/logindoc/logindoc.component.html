@@ -1,0 +1,57 @@
+<!-- Navbar Doctor Login  -->
+<nav
+  class="navbar navbar-expand-lg bg-body-tertiary shadow-sm p-3 mb-5 bg-body-tertiary rounded"
+>
+  <div class="container">
+    <a class="navbar-brand hred" routerLink="/docdash">
+      <span>H+</span>&nbsp;<span class="ad">Doctor /Login</span></a
+    >
+  </div>
+</nav>
+
+<!-- Navbar  -->
+
+<div class="containerform container mt-4 lg">
+  <form (ngSubmit)="onSubmit()" class="form-horizontal">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <!-- Name Field -->
+        <div class="form-group p-3">
+          <label for="name">User ID</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-control"
+            placeholder="Enter User ID"
+            required
+          />
+        </div>
+
+        <!-- Name Field -->
+        <div class="form-group p-3">
+          <label for="stock">Password</label>
+          <input
+            type="password"
+            id="stock"
+            name="stock"
+            class="form-control"
+            placeholder="Enter Password"
+            required
+          />
+        </div>
+        <br /><br />
+        <!-- Submit Button -->
+        <div class="form-group text-center">
+          <button
+            type="submit"
+            class="btn btn-primary btn-block dl"
+            routerLink="/docdash"
+          >
+            Doctor Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

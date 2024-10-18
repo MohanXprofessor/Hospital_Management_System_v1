@@ -1,7 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { PatientService } from '../../Services/patient.service';
 import { Patient } from '../../Models/patient';
 import { Router } from '@angular/router';
+import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
+import { PatientviewpopupComponent } from '../../patientviewpopup/patientviewpopup.component';
 
 @Component({
   selector: 'app-patientlist',
@@ -11,7 +13,8 @@ import { Router } from '@angular/router';
 export class PatientlistComponent {
 
   patients:Patient[]=[];
-  constructor(private patientservice:PatientService,private router:Router){}
+
+  constructor(private dialog:MatDialog,private patientservice:PatientService,private router:Router){}
 
 
 ngOnInit():void{
@@ -32,8 +35,18 @@ ngOnInit():void{
   {
     this.patientservice.deletePatients(id).subscribe(data=>{
       this.getpatient();
-      alert("Are You Sure You want to Delete this Record...");
-      this.router.navigate(["/patientlist"])
+      // alert("Are You Sure You want to Delete this Record...");
+      this.router.navigate(["/patientslist"])
     })
   }
+
+
+  ShowpatientsPopup(patientId:any): void {
+    this.dialog.open(PatientviewpopupComponent, {
+     width: '30%',
+     data: { id: patientId 
+     }
+   });
+ 
+ }
 }

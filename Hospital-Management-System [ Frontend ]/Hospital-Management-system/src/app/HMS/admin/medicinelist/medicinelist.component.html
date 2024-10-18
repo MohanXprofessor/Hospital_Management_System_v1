@@ -1,11 +1,12 @@
-<app-admindashboard></app-admindashboard>
+<app-docdash></app-docdash>
 
 <h3 class="text-center text-primary">Medicine List</h3>
 <div class="d-flex justify-content-end px-5">
   <a routerLink="/createmedicine"
-    ><button class="btn btn-primary">Add +</button></a
+    ><button mat-stroked-button color="primary">Add +</button></a
   >
 </div>
+
 <table class="table table-hover container">
   <thead class="table table-dark">
     <tr>
@@ -23,11 +24,19 @@
       <td>{{ medicine.drug_name }}</td>
       <td>{{ medicine.stock }}</td>
 
-      <td><button class="btn btn-sm btn-success">View</button></td>
-      <td><button class="btn btn-sm btn-info">Edit</button></td>
+      <td>
+        <button mat-raised-button (click)="ShowPopup(medicine.m_id)">
+          View
+        </button>
+      </td>
+
+      <td>
+        <button mat-raised-button color="warn">Edit</button>
+      </td>
       <td>
         <button
-          class="btn btn-sm btn-danger"
+          mat-raised-button
+          color="warn"
           (click)="medicinedelete(medicine.m_id)"
         >
           Delete

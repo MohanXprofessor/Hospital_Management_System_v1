@@ -1,0 +1,74 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.HMSApp.Hospital.Management.System.Repository.DocMedicineRepo;
+import com.HMSApp.Hospital.Management.System.doctloginEntity.Medicine;
+
+
+
+@Service
+public class DocMedicineSerImp implements DocMedicineService {
+
+	@Autowired
+	private DocMedicineRepo docmedicinerepo;
+	
+	@Override
+	public Medicine createMedicine(Medicine Medicine) {
+		
+		return docmedicinerepo.save(Medicine);
+	}
+
+	
+	@Override
+	public Medicine getMedicineById(Long id) {
+		
+		Optional<Medicine> medicine=docmedicinerepo.findById(id);
+		if(medicine.isEmpty())
+		{
+			throw new RuntimeException("Medicine Not Found...");
+		}
+		
+		Medicine presentmedicine=medicine.get();
+		
+		return presentmedicine;
+	}
+
+	 @Override
+	    public Medicine updateMedicine(Medicine updatedMedicine) {
+	        // Fetch the medicine by ID
+	        Medicine existingMedicine = getMedicineById(updatedMedicine.getId());
+	        
+	        // Update the details of the existing medicine with the new data
+	        existingMedicine.setName(updatedMedicine.getName());
+	        existingMedicine.setPrice(updatedMedicine.getPrice());
+	        existingMedicine.setQuantity(updatedMedicine.getQuantity());
+	        existingMedicine.setExpiryDate(updatedMedicine.getExpiryDate());
+	        // Add any additional fields that need updating
+
+	        // Save the updated medicine to the repository
+	        return docmedicinerepo.save(existingMedicine);
+	    }
+
+	@Override
+	public void deleteMedicine(Long id) {
+		
+		getMedicineById(id);
+		docmedicinerepo.deleteById(id);
+		
+	}
+
+	@Override
+	public List<Medicine> getAllMedicine() {
+		
+		List<Medicine> listofMedicine=docmedicinerepo.findAll();
+		return listofMedicine;
+	}
+
+	
+
+}

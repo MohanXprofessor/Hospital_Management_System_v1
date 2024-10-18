@@ -25,4 +25,8 @@ export class AppointmentService {
    deleteAppointment(id: number): Observable<void> {
     return this.http.delete<void>(`${this.baseUrl}/appointment/${id}`);
   }
+
+  getAppointmentById(id: number): Observable<Appointment> {
+    return this.http.get<Appointment>(`${this.baseUrl}/appointment/${id}`);
+  }
 }

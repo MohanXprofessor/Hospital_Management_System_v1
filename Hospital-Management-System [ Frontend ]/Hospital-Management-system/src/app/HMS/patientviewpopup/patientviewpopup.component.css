@@ -1,0 +1,16 @@
+*{
+   padding: 0;margin: 0;box-sizing: border-box;
+}
+.ptitle{
+    color: red;
+    font-weight: 800;
+    text-transform: uppercase;
+   
+}
+.pbody{
+    font-size: 18px;
+    
+}
+.pbutton{
+    width: 90%;
+}

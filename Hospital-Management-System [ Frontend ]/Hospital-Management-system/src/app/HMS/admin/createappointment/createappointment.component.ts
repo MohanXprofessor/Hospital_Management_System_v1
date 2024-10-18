@@ -20,7 +20,7 @@ this.saveappointment();
   saveappointment(){
     this.appointmentservice.createappointment(this.appointments).subscribe(data => {
       alert("Save Appointment....");
-      this.router.navigate(['/appointmentpage']);
+      this.router.navigate(['/appointmentlist']);
     })
   }
 
