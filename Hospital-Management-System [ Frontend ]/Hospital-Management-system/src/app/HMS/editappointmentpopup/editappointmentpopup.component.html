@@ -1,0 +1,64 @@
+<h2 mat-dialog-title class="aptitle">Update Appointment</h2>
+<hr />
+<form [formGroup]="appointmentForm" class="apform" (ngSubmit)="onSubmit()">
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput id="name" formControlName="name" />
+    <mat-error
+      *ngIf="
+        appointmentForm.get('name')?.invalid &&
+        appointmentForm.get('name')?.touched
+      "
+    >
+      Name is required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Age</mat-label>
+    <input matInput id="age" type="number" formControlName="age" />
+    <mat-error
+      *ngIf="
+        appointmentForm.get('age')?.invalid &&
+        appointmentForm.get('age')?.touched
+      "
+    >
+      Age is required and must be at least 1.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Symptoms</mat-label>
+    <textarea matInput id="symptoms" formControlName="symptoms"></textarea>
+    <mat-error
+      *ngIf="
+        appointmentForm.get('symptoms')?.invalid &&
+        appointmentForm.get('symptoms')?.touched
+      "
+    >
+      Symptoms are required.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Contact Number</mat-label>
+    <input matInput id="number" formControlName="number" />
+    <mat-error
+      *ngIf="
+        appointmentForm.get('number')?.invalid &&
+        appointmentForm.get('number')?.touched
+      "
+    >
+      Contact number is required and must be numeric.
+    </mat-error>
+  </mat-form-field>
+
+  <button
+    mat-raised-button
+    color="warn"
+    type="submit"
+    [disabled]="!appointmentForm.valid"
+  >
+    Update Appointment
+  </button>
+</form>

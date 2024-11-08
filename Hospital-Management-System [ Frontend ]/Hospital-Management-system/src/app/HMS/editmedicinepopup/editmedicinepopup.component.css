@@ -1,0 +1,20 @@
+.formc{
+    display:flex;
+    flex-direction:column;
+    text-align: center;
+}
+
+.mtitle{
+    text-align: center;
+    color: #f40303dc;
+}
+.mbutton{
+    background-color: #f40303dc;
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+   
+}
+.mbtn{
+    color: white;
+}

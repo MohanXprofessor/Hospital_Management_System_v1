@@ -34,4 +34,11 @@ export class PatientService {
   getPatientsById(id: number): Observable<Patient> {
     return this.http.get<Patient>(`${this.baseUrl}/patients/${id}`);
   }
+
+
+
+  // Method to update Patient details
+updatePatients(Patient: Patient): Observable<Patient> {
+  return this.http.put<Patient>(`${this.baseUrl}/updatepatient/${Patient.p_id}`, Patient);
+}
 }

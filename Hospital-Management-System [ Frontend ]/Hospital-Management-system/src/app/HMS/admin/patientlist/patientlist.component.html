@@ -44,7 +44,12 @@
         </button>
       </td>
       <td>
-        <button class="btn btn-sm btn-info" mat-raised-button color="accent">
+        <button
+          class="btn btn-sm btn-info"
+          mat-raised-button
+          color="accent"
+          (click)="ShoweditpatientsPopup(patient.p_id)"
+        >
           Edit
         </button>
       </td>

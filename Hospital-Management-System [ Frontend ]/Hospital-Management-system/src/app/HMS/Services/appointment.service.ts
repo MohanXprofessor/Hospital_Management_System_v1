@@ -29,4 +29,9 @@ export class AppointmentService {
   getAppointmentById(id: number): Observable<Appointment> {
     return this.http.get<Appointment>(`${this.baseUrl}/appointment/${id}`);
   }
+
+  // Update appointment
+  updateAppointment(appointment: any): Observable<Appointment> {
+    return this.http.put<Appointment>(`${this.baseUrl}/updateappointment/${appointment.a_id}`, appointment);
+  }
 }

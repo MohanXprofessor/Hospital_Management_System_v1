@@ -4,6 +4,7 @@ import { Appointment } from '../../Models/appointment';
 import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { AppointmentpopupComponent } from '../appointmentpopup/appointmentpopup.component';
+import { EditappointmentpopupComponent } from '../../editappointmentpopup/editappointmentpopup.component';
 
 @Component({
   selector: 'app-appointmentlist',
@@ -45,5 +46,28 @@ ngOnInit():void
    });
  
  }
+
+
+
+ 
+
+ openAppointmentDialog(appointment: Appointment): void {
+  const dialogRef = this.dialog.open(EditappointmentpopupComponent, {
+    width: '400px',
+    data: appointment // Pass the appointment data to the dialog
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      // Handle the updated appointment (e.g., refresh the list)
+      this.refreshAppointments();
+    }
+  });
+}
+
+refreshAppointments(): void {
+  // Logic to refresh the appointments list after an update
+  this.getappointmentlist();
+}
 
 }

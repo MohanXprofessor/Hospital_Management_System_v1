@@ -12,7 +12,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CreatepatientComponent } from './HMS/admin/createpatient/createpatient.component';
 import CreatemedicineComponent from './HMS/admin/createmedicine/createmedicine.component';
 import { CreateappointmentComponent } from './HMS/admin/createappointment/createappointment.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
@@ -24,6 +24,11 @@ import { LogindocComponent } from './HMS/logindoc/logindoc.component';
 import { LoginadminComponent } from './HMS/loginadmin/loginadmin.component';
 import { PatientviewpopupComponent } from './HMS/patientviewpopup/patientviewpopup.component';
 import { AppointmentpopupComponent } from './HMS/admin/appointmentpopup/appointmentpopup.component';
+import { EditmedicinepopupComponent } from './HMS/editmedicinepopup/editmedicinepopup.component';
+import { EditpatientpopupComponent } from './HMS/editpatientpopup/editpatientpopup.component';
+import { EditappointmentpopupComponent } from './HMS/editappointmentpopup/editappointmentpopup.component';
+import {  MAT_FORM_FIELD_DEFAULT_OPTIONS, MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 
 @NgModule({
@@ -44,7 +49,11 @@ import { AppointmentpopupComponent } from './HMS/admin/appointmentpopup/appointm
     LogindocComponent,
     LoginadminComponent,
     PatientviewpopupComponent,
-    AppointmentpopupComponent
+    AppointmentpopupComponent,
+    EditmedicinepopupComponent,
+    EditpatientpopupComponent,
+    EditappointmentpopupComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -53,13 +62,20 @@ import { AppointmentpopupComponent } from './HMS/admin/appointmentpopup/appointm
     HttpClientModule,
     FormsModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    ReactiveFormsModule
     
     
   ],
   providers: [
-    provideAnimationsAsync()
+    provideAnimationsAsync(),
+    {
+      provide:MAT_FORM_FIELD_DEFAULT_OPTIONS,
+      useValue:{appearance:'outline'},
+    }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent] 
 })
 export class AppModule { }

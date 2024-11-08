@@ -39,7 +39,13 @@
         </button>
       </td>
       <td>
-        <button class="btn btn-sm btn-info" mat-raised-button>Edit</button>
+        <button
+          class="btn btn-sm btn-info"
+          mat-raised-button
+          (click)="openAppointmentDialog(appointment)"
+        >
+          Edit
+        </button>
       </td>
       <td>
         <button

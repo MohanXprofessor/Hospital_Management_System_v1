@@ -1,0 +1,82 @@
+package com.HMSApp.Hospital.Management.System.Services;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+
+import com.HMSApp.Hospital.Management.System.Repository.PatientsRepository;
+import com.HMSApp.Hospital.Management.System.doctloginEntity.Medicine;
+import com.HMSApp.Hospital.Management.System.entity.Patients;
+
+@Service
+public class PatientsServiceImp implements PatientsService {
+
+	
+	@Autowired
+	private PatientsRepository pRepo;
+	
+	
+	@Override
+	public Patients createPatients(Patients patients) {
+		
+		return pRepo.save(patients);
+	}
+
+
+	@Override
+	public Patients getPatientsById(Long id) {
+
+		Optional<Patients> patients=pRepo.findById(id);
+		if(patients.isEmpty())
+		{
+			throw new RuntimeException("Patients "+id+" Not Found...");
+		}
+		return patients.get();
+		 
+	}
+
+
+	@Override
+	public Patients updatePatients(Patients updatepatients) {
+		
+		// Fetch the Patient by ID
+        Patients existingPatients = getPatientsById(updatepatients.getP_id());
+        
+        // Update the details of the existing medicine with the new data
+        existingPatients.setName(updatepatients.getName());
+        existingPatients.setAge(updatepatients.getAge());
+        existingPatients.setBloodGroup(updatepatients.getBloodGroup());
+        existingPatients.setName(updatepatients.getName());
+        existingPatients.setName(updatepatients.getName());
+        existingPatients.setName(updatepatients.getName());
+        
+        
+        
+        // Add any additional fields that need updating
+
+        // Save the updated medicine to the repository
+        return docmedicinerepo.save(existingMedicine);
+	}
+
+
+	@Override
+	public void deletePatients(Long id) {
+		
+		getPatientsById(id);
+		pRepo.deleteById(id);
+	}
+
+
+	@Override
+	public List<Patients> getAllPatients() {
+		List<Patients> getallpatients=pRepo.findAll();
+		return getallpatients;
+	}
+
+	
+	
+
+}

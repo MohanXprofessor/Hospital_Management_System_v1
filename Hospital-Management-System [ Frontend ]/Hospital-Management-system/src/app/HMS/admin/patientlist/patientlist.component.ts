@@ -4,6 +4,7 @@ import { Patient } from '../../Models/patient';
 import { Router } from '@angular/router';
 import { MAT_DIALOG_DATA, MatDialog } from '@angular/material/dialog';
 import { PatientviewpopupComponent } from '../../patientviewpopup/patientviewpopup.component';
+import { EditpatientpopupComponent } from '../../editpatientpopup/editpatientpopup.component';
 
 @Component({
   selector: 'app-patientlist',
@@ -40,6 +41,11 @@ ngOnInit():void{
     })
   }
 
+  patientsedit(id:number)
+  {
+
+  }
+
 
   ShowpatientsPopup(patientId:any): void {
     this.dialog.open(PatientviewpopupComponent, {
@@ -49,4 +55,15 @@ ngOnInit():void{
    });
  
  }
+
+
+ 
+ ShoweditpatientsPopup(patient:any): void {
+    const dialogRef = this.dialog.open(EditpatientpopupComponent, {
+        width: '400px',
+        data: patient // Pass the medicine data to the dialog
+    });
+  
+  }
+
 }

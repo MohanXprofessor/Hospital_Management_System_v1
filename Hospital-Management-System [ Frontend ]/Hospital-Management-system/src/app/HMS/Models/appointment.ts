@@ -4,4 +4,7 @@ export class Appointment {
     age:number=0;
     symptoms:String="";
     number:number=0;
+    valid: any;
+   
+    
 }

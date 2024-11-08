@@ -1,0 +1,93 @@
+package com.HMSApp.Hospital.Management.System.Controller;
+
+import java.util.List;
+import java.util.Map;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+
+import com.HMSApp.Hospital.Management.System.Services.PatientsService;
+import com.HMSApp.Hospital.Management.System.doctloginEntity.Appointment;
+import com.HMSApp.Hospital.Management.System.doctloginEntity.Medicine;
+import com.HMSApp.Hospital.Management.System.entity.Patients;
+
+import jakarta.el.MethodNotFoundException;
+
+@CrossOrigin(origins = "http://localhost:4200")
+@RestController
+@RequestMapping("/hospital/api")
+public class PatientsController {
+	
+	@Autowired
+	private PatientsService pservice;
+	
+	
+	@PostMapping("/createpatient")
+	public ResponseEntity<Patients> createPatients(@RequestBody Patients p)
+	{
+		Patients createPatients=pservice.createPatients(p);
+		
+		return ResponseEntity.status(HttpStatus.CREATED).body(createPatients);
+	}
+	
+
+	@GetMapping("/getallpatients")
+	public List<Patients> getAllMedicine()
+	{
+		List<Patients> allPatients=pservice.getAllPatients();
+		
+		return allPatients;
+	}
+	
+	@DeleteMapping("/patients/{id}")
+    public ResponseEntity<Map<String,Boolean>> deletePatient(@PathVariable Long id) {
+        // Call the service layer to delete the patient by ID
+        pservice.deletePatients(id);
+        
+        
+        // Return a 204 No Content status, meaning the operation was successful but there's no response body
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+	
+	
+	@GetMapping("/patients/{id}")
+    public ResponseEntity<Patients> getPatientsById(@PathVariable Long id) {
+        Patients patient =pservice.getPatientsById(id);
+        return ResponseEntity.ok(patient);
+    }
+	
+	@PutMapping("/updatepatient/{id}")
+    public ResponseEntity<Medicine> updateMedicine(@PathVariable Long id, @RequestBody Patients updatepatient) {
+        try {
+            // Set the ID from the path variable to the updated medicine
+            updatepatient.setP_id(id);
+
+            // Update the medicine details using the service method
+            Patients uppatient = pservice.updatePatients(updatepatient);
+
+            // Return the updated medicine in the response entity with a 200 OK status
+            return new ResponseEntity<Patient>(uppatient, HttpStatus.OK);
+            
+        } catch (MethodNotFoundException e) {
+            // If the medicine is not found, return a 404 status
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        } catch (Exception e) {
+            // For any other error, return a 500 status
+            return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+	
+	
+
+}

@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { catchError, Observable, throwError } from 'rxjs';
 import { Medicine } from '../Models/medicine';
 
 @Injectable({
@@ -16,8 +16,9 @@ export class MedicineService {
 getmedicinelist():Observable<Medicine[]>{
 
   return this.http.get<Medicine[]>(`${this.baseUrl}/getallmedicine`)
-
 }
+
+
 
 getMedicineById(id: number): Observable<any> {
   return this.http.get(`${this.baseUrl}/${id}`);
@@ -31,4 +32,12 @@ createmedicine(medicine:Medicine):Observable<Medicine>{
  deleteMedicine(id: number): Observable<void> {
   return this.http.delete<void>(`${this.baseUrl}/medicine/${id}`);
 }
+
+
+
+// Method to update medicine details
+updateMedicine(medicine: Medicine): Observable<Medicine> {
+  return this.http.put<Medicine>(`${this.baseUrl}/updatemedicine/${medicine.m_id}`, medicine);
+}
+
 }

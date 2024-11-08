@@ -1,0 +1,11 @@
+.apform{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.aptitle{
+    text-align: center;
+    padding: 10px;
+    color: red;
+    font-weight: 600;
+}

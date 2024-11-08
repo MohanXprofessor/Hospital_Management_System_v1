@@ -5,6 +5,9 @@ import { Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { PopupviewComponent } from '../../../popupview/popupview.component';
 import CreatemedicineComponent from '../createmedicine/createmedicine.component';
+import { EditmedicinepopupComponent } from '../../editmedicinepopup/editmedicinepopup.component';
+import { Observable } from 'rxjs';
+import { EditappointmentpopupComponent } from '../../editappointmentpopup/editappointmentpopup.component';
 
 
 @Component({
@@ -48,6 +51,26 @@ ShowPopup(medicineId:any): void {
   });
 
 }
+
+
+editmedicinePopup(medicine:Medicine): void {
+  const dialogRef = this.dialog.open(EditmedicinepopupComponent, {
+      width: '400px',
+      data: medicine // Pass the medicine data to the dialog
+  });
+
+  dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+          // Update the local medicines array if needed
+          const index = this.medicines.findIndex(m => m.m_id === result.m_id);
+          if (index !== -1) {
+              this.medicines[index] = result; // Update the medicine in the list
+          }
+      }
+  });
+}
+
+
 
 }
 

@@ -1,0 +1,77 @@
+<h2 mat-dialog-title class="mtitle">Update Patients</h2>
+<hr />
+<form (ngSubmit)="onSubmit()" class="formc" #medicineForm="ngForm">
+  <mat-dialog-content>
+    <!-- Row 1: Patient Name and Age (2 inline fields) -->
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Patient Name</mat-label>
+        <input matInput required [(ngModel)]="patient.name" name="name" />
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Age</mat-label>
+        <input
+          matInput
+          type="number"
+          required
+          [(ngModel)]="patient.age"
+          name="age"
+        />
+      </mat-form-field>
+      <div class="spacer-column"></div>
+      <!-- Spacer for the third column -->
+    </div>
+
+    <!-- Row 2: Blood Group and Does -->
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Blood Group</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="patient.bloodGroup"
+          name="bloodGroup"
+        />
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Does</mat-label>
+        <input matInput required [(ngModel)]="patient.does" name="does" />
+      </mat-form-field>
+      <div class="spacer-column"></div>
+    </div>
+
+    <!-- Row 3: Prescription and Fees -->
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Prescription</mat-label>
+        <input
+          matInput
+          required
+          [(ngModel)]="patient.prescription"
+          name="prescription"
+        />
+      </mat-form-field>
+      <mat-form-field class="form-field">
+        <mat-label>Fees</mat-label>
+        <input matInput required [(ngModel)]="patient.fees" name="fees" />
+      </mat-form-field>
+      <div class="spacer-column"></div>
+    </div>
+
+    <!-- Row 4: Urgency -->
+    <div class="form-row">
+      <mat-form-field class="form-field">
+        <mat-label>Urgency</mat-label>
+        <input matInput required [(ngModel)]="patient.urgency" name="urgency" />
+      </mat-form-field>
+      <div class="spacer-column"></div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="mbutton">
+    <button class="mbtn" mat-button mat-dialog-close>Cancel</button>
+    <button class="mbtn" mat-button type="submit" cdkFocusInitial>
+      Submit
+    </button>
+  </mat-dialog-actions>
+</form>

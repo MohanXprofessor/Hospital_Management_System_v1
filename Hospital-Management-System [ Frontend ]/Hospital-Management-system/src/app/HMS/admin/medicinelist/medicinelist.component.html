@@ -31,7 +31,13 @@
       </td>
 
       <td>
-        <button mat-raised-button color="warn">Edit</button>
+        <button
+          mat-raised-button
+          (click)="editmedicinePopup(medicine)"
+          color="warn"
+        >
+          Edit
+        </button>
       </td>
       <td>
         <button
